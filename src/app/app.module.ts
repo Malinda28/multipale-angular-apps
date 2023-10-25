@@ -15,7 +15,7 @@ import { CommonService } from './core/common.service';
   ],
   providers: [
     HttpClientModule,
-    CommonService
+    // CommonService
   ],
   bootstrap: [AppComponent],
   exports:[
