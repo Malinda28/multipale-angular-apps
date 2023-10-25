@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonService } from 'src/app/core/common.service';
+import { SurveyService } from '../services/survey.service';
 
 @Component({
   selector: 'app-survey',
@@ -9,8 +10,15 @@ import { CommonService } from 'src/app/core/common.service';
 export class SurveyComponent {
 
   user: any;
-  constructor(commonService: CommonService) {
+  surveys: any;
+  constructor(private commonService: CommonService, private surveyService: SurveyService) {
     this.user = commonService.getUserData();
+
+    this.getSurvey();
+  }
+  async getSurvey() {
+    this.surveys = await this.surveyService.getSurveys();
+    console.log(this.surveys)
   }
 
 }
