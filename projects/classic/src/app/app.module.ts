@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SurveyComponent } from './survey/survey.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonService } from 'src/app/core/common.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,12 @@ import { SurveyComponent } from './survey/survey.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CommonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
